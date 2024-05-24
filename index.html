@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Size Calculator</title>
+</head>
+
+<body>
+    <label for="head_taped_size_slip">Taped Head Circumference</label>
+    <input type="text" name="head_taped_size_slip" id="head_taped_size_slip">
+    <label for="head_thickness_slip">Head Material Thickness</label>
+    <input type="text" name="head_thickness_slip" id="head_thickness_slip">
+    <button id="slip_button">Calculate</button>
+    <div>
+        <p>
+            Result:
+        </p>
+        <p id="slip_result">
+        </p>
+    </div>
+    </form>
+    <script defer>
+        const headTapedSize_slip = document.getElementById('head_taped_size_slip');
+        const headThickness_slip = document.getElementById('head_thickness_slip');
+        const slipButton = document.getElementById('slip_button');
+        const resultText = document.getElementById('slip_result');
+
+        slipButton.addEventListener('click', () => {
+            const headSize = Number(headTapedSize_slip.value);
+            const headThickness = Number(headThickness_slip.value);
+
+            const result = ((headSize / Math.PI) + headThickness) * Math.PI;
+            resultText.textContent = result; 
+        })
+
+    </script>
+</body>
+
+</html>
