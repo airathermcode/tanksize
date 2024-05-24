@@ -31,7 +31,7 @@
             const headSize = Number(headTapedSize_slip.value);
             const headThickness = Number(headThickness_slip.value);
 
-            const result = ((headSize / Math.PI) + headThickness) * Math.PI;
+            const result = ((headSize / Math.PI) + (headThickness * 2)) * Math.PI;
             resultText.textContent = result; 
         })
 
